@@ -1,0 +1,32 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner scn= new Scanner(System.in);
+
+        System.out.print("enter your rating marks for this movie:");
+        int rating=scn.nextInt();
+        if (rating>5000 && rating<25000)
+        {
+            System.out.println("your given mark is good");
+        }
+        else if (rating>25000 && rating<45000)
+        {
+            System.out.println("your given mark is better");
+        }
+        else if (rating>45000 && rating<70000)
+        {
+            System.out.println("your given mark is best");
+        }
+        else if (rating>70000)
+        {
+            System.out.println("your given mark is out of the world");
+        }
+        else
+        {
+            System.out.println("your given mark is not good");
+        }
+        
+    }
+}
