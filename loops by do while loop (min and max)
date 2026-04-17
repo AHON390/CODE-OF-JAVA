@@ -1,0 +1,32 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) 
+    {
+        Scanner scn=new Scanner(System.in);
+        int number;
+        int max=Integer.MAX_VALUE;
+        int min=Integer.MIN_VALUE;
+        char choice;
+        
+        do
+        {
+            System.out.print("enter your number:");
+            number = scn.nextInt();
+            
+            if(number > max)
+            {
+                max=number;
+            }
+            if(number < min)
+            {
+                min = number;
+            }
+            System.out.print("do you want to continue y/n");
+            choice=scn.next().charAt(0);
+        }while(choice=='y' || choice == 'Y');
+        System.out.println("largest number:"+max);
+        System.out.println("smallest number:"+min);
+    }
+}
