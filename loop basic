@@ -1,0 +1,22 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        for (int i=0;i<=20;i++)
+        {
+            System.out.println("ilterate number is:"+i);
+        }
+        for (int i=10;i>=1;i--)
+        {
+            System.out.println("ileterate number is: "+i);
+        }
+        int sum=0;
+    
+        for (int j=1;j<=10;j++)
+        {
+            sum=sum+j;
+        }
+        System.out.println("sum of series 1+2+3..."+sum);
+    }
+}
