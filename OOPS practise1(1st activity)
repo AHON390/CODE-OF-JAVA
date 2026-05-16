@@ -1,0 +1,32 @@
+public class person{
+    private String name;
+    private int age;
+    }
+    public person(String name, int age){
+        this.name=name;
+        this.age=age;
+    }
+    public String getName(){
+    return name;
+    }
+    public String getAge(){
+        return  age;
+    }
+
+public class Student extends person{
+    private String major;
+    public Student(String name,int age,String major){
+    super(name,age);
+    this.major=major;
+    }
+    public String getMajor(){
+        return major;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+    Student student=new Student("alice",20,"coumpuer sceicne");
+    System.out.println("name"+student.getName());
+    System.out.println("age"=student.getAge());
+    }
+}
