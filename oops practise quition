@@ -1,0 +1,33 @@
+
+class Device {
+    String deviceName;
+    
+    Device(String deviceName) {
+        this.deviceName = deviceName;
+    }
+    
+    void sendNotification() {
+        System.out.println("Notification sent from " + deviceName);
+    }
+}
+
+
+class SmartDevice extends Device {
+    
+    SmartDevice(String deviceName) {
+        super(deviceName);
+    }
+    
+    void sendNotification() {
+        System.out.println("Smart notification sent from " + deviceName);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Device d1 = new Device("phone");
+        Device d2 = new SmartDevice("laptop");
+        
+        d1.sendNotification();
+        d2.sendNotification();
+    }
+}
