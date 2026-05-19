@@ -1,0 +1,45 @@
+
+class Animal {
+    int age;
+    String name;
+    String colour;
+
+    public Animal(int age, String name, String colour) {
+        this.age = age;
+        this.name = name;
+        this.colour = colour;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getColour() {
+        return colour;
+    }
+} 
+
+class Dog extends Animal {
+    public Dog(int age, String name, String colour) {
+        super(age, name, colour); 
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+    System.out.println("animal age___");
+    System.out.println("animal name__");
+    System.out.println("animal coloiur___");
+    
+        Dog d1 = new Dog(5, "Tommy", "Black");
+        System.out.println("Dog age: " + d1.getAge());
+        System.out.println("Dog name: " + d1.getName()); 
+        System.out.println("Dog colour: " + d1.getColour()); 
+        
+    }
+}
