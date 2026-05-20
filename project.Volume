@@ -1,0 +1,42 @@
+class Shape {
+    void getVolume() {
+        System.out.println("The formulas for getting volume are:");
+    }
+}
+
+class Cube extends Shape {
+    @Override
+    void getVolume() {
+        System.out.println("Cube Volume = a^3");
+    }
+}
+
+class Cuboid extends Shape {
+    @Override
+    void getVolume() {
+       
+        System.out.println("Cuboid Volume = l * w * h");
+    }   
+}
+
+class Cylinder extends Shape {
+    @Override
+    void getVolume() {
+        System.out.println("Cylinder Volume = pi * r^2 * h");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+   
+        Shape shape = new Shape();
+        Shape cube = new Cube();
+        Shape cuboid = new Cuboid();
+        Shape cylinder = new Cylinder();
+        
+        shape.getVolume();
+        cube.getVolume();
+        cuboid.getVolume();
+        cylinder.getVolume();
+    }
+}
