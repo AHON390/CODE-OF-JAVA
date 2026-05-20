@@ -1,0 +1,83 @@
+// 1. Parent class (Name changed to Wonders7 as Java identifiers cannot start with numbers)
+class Wonders7 {
+    // 2. Output statement inside the parent class
+    public void displayInfo() {
+        System.out.println("The 7 Wonders of the World:");
+    }
+}
+
+// 3. 7 Sub-classes inheriting from Wonders7 class
+
+class TajMahal extends Wonders7 {
+    // 4. Custom output statement for each sub-class
+    @Override
+    public void displayInfo() {
+        System.out.println("1. Taj Mahal (India): The four minarets surrounding the complex are built slightly outside the main foundation so that if they collapse, they fall outward to avoid damaging the tomb.");
+    }
+}
+
+class GreatWall extends Wonders7 {
+    @Override
+    public void displayInfo() {
+        System.out.println("2. Great Wall of China (China): The longest man-made structure in the world.");
+    }
+}
+
+class Petra extends Wonders7 {
+    @Override
+    public void displayInfo() {
+        System.out.println("3. Petra (Jordan): A famous historical and archaeological city carved into red rocks.");
+    }
+}
+
+class Colosseum extends Wonders7 {
+    @Override
+    public void displayInfo() {
+        System.out.println("4. Colosseum (Italy): A massive ancient amphitheater located in the center of Rome.");
+    }
+}
+
+class ChichenItza extends Wonders7 {
+    @Override
+    public void displayInfo() {
+        System.out.println("5. Chichen Itza (Mexico): A large pre-Columbian city built by the Maya civilization.");
+    }
+}
+
+class MachuPicchu extends Wonders7 {
+    @Override
+    public void displayInfo() {
+        System.out.println("6. Machu Picchu (Peru): An ancient Incan citadel set high in the Andes Mountains.");
+    }
+}
+
+class ChristTheRedeemer extends Wonders7 {
+    @Override
+    public void displayInfo() {
+        System.out.println("7. Christ the Redeemer (Brazil): An iconic colossal statue of Jesus Christ in Rio de Janeiro.");
+    }
+}
+
+// 5. Main runner class implementing Polymorphism to call the methods
+public class Main {
+    public static void main(String[] args) {
+        
+        // Creating an array of Parent class references to demonstrate Polymorphism
+        Wonders7[] wonders = new Wonders7[8];
+        
+        wonders[0] = new Wonders7();
+        wonders[1] = new TajMahal();
+        wonders[2] = new GreatWall();
+        wonders[3] = new Petra();
+        wonders[4] = new Colosseum();
+        wonders[5] = new ChichenItza();
+        wonders[6] = new MachuPicchu();
+        wonders[7] = new ChristTheRedeemer();
+        
+        // Loop through the array using Runtime Polymorphism (Method Overriding)
+        for (Wonders7 wonder : wonders) {
+            wonder.displayInfo(); 
+            System.out.println("--------------------------------------------------");
+        }
+    }
+}
