@@ -1,0 +1,57 @@
+public class Game
+{
+    private Level levelOne;
+    private Level levelTwo;
+    private Level levelThree;
+    public Game()
+ 
+    public int getScore()
+    {
+        int totalScore = 0;
+      
+        if (levelOne.goalReached())
+        {
+            totalScore += levelOne.getPoints();
+            
+            if (levelTwo.goalReached())
+            {
+                totalScore += levelTwo.getPoints();
+                
+                if (levelThree.goalReached())
+                {
+                    totalScore += levelThree.getPoints();
+                }
+            }
+        }
+        
+        if (isBonus())
+        {
+            totalScore *= 3;
+        }
+        
+        return totalScore;
+    }
+    
+   
+    public int playManyTimes(int num)
+    {
+        this.play();
+        int maxScore = this.getScore();
+        
+    
+        for (int i = 1; i < num; i++)
+        {
+            this.play();
+            int currentScore = this.getScore();
+            
+            if (currentScore > maxScore)
+            {
+                maxScore = currentScore;
+            }
+        }
+        
+        return maxScore;
+    }
+    
+    // There may be instance variables, constructors, and methods that are not shown.
+}
