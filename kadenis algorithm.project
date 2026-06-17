@@ -1,0 +1,70 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class LargestSum {
+    
+  
+    public static long kadane(List<Integer> arr) {
+        long maxSoFar = 0; 
+        long currMax = 0;
+        
+        for (int num : arr) {
+            currMax += num;
+            if (currMax > maxSoFar) {
+                maxSoFar = currMax;
+            }
+            if (currMax < 0) {
+                currMax = 0;
+            }
+        }
+        return maxSoFar;
+    }
+
+    public static long maxSubarraySumRepeated(int[] A, int K) {
+        long sumA = 0;
+        for (int num : A) {
+            sumA += num;
+        }
+
+        if (K == 1) {
+            List<Integer> listA = new ArrayList<>();
+            for (int num : A) listA.add(num);
+            return kadane(listA);
+        }
+
+        List<Integer> doubleA = new ArrayList<>();
+        for (int num : A) doubleA.add(num);
+        for (int num : A) doubleA.add(num);
+        
+        long maxOfTwoCopies = kadane(doubleA);
+
+        if (sumA > 0) {
+            return maxOfTwoCopies + (K - 2) * sumA;
+        } else {
+            return maxOfTwoCopies;
+        }
+    } 
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        
+        System.out.print("Enter your array size (N): ");
+        int n = scn.nextInt(); 
+        
+        int[] a = new int[n];
+        
+        System.out.println("Enter the elements of array:");
+        for (int i = 0; i < n; i++) {
+            a[i] = scn.nextInt();
+        } 
+        
+        System.out.print("Enter the value of K: ");
+        int k = scn.nextInt();
+        
+    
+        long result = maxSubarraySumRepeated(a, k);
+        System.out.println("Maximum Subarray Sum: " + result);
+        
+        scn.close(); 
+    } 
+}
