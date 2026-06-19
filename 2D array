@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class RepresentArray{
+    public static void main(String[] args){
+        Scanner scn=new Scanner(System.in);
+        
+        System.out.print("enter your rows");
+        int n=scn.nextInt();
+        
+        System.out.print("enter your column");
+        int m=scn.nextInt();
+        
+        int[][] arr=new int[n][m];
+        
+        System.out.println("enter the array");
+        
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                arr[i][j] =scn.nextInt();
+            }
+        }
+         System.out.println("enter 2d array");
+        
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+            System.out.println(arr[i][j]+" ");
+            }
+            System.out.println();
+        }
+        
+    }
+}
