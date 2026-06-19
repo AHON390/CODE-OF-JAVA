@@ -1,0 +1,65 @@
+// Initialize boundaries for the spiral traversal
+
+int rmin = 0, cmin = 0, rmax = n - 1, cmax = m - 1;
+
+int count = 0;
+
+// Start the spiral traversal
+
+System.out.println("Spiral order traversal of the array:");
+
+while (count < n * m) {
+
+// Traverse the top row (left to right)
+
+for (int col = cmin; col <= cmax && count < n * m; col++) {
+
+System.out.print(arr[rmin][col] + " ");
+
+count++;
+
+}
+
+rmin++;
+
+// Traverse the right column (top to bottom)
+
+for (int row = rmin; row <= rmax && count < n * m; row++) {
+
+System.out.print(arr[row][cmax] + " ");
+
+count++;
+
+}
+
+cmax--;
+
+// Traverse the bottom row (right to left)
+
+for (int col = cmax; col >= cmin && count < n * m; col--) {
+
+System.out.print(arr[rmax][col] + " ");
+
+count++;
+
+}
+
+rmax--;
+
+// Traverse the left column (bottom to top)
+
+for (int row = rmax; row >= rmin && count < n * m; row--) {
+
+System.out.print(arr[row][cmin] + " ");
+
+count++;
+
+}
+
+cmin++;
+
+}
+
+}
+
+}
