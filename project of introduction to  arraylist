@@ -1,0 +1,58 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ArrayListDemo {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        // Create an ArrayList of Strings
+        ArrayList<String> students = new ArrayList<>();
+
+        // Input number of students
+        System.out.print("Enter the number of students: ");
+        int n = sc.nextInt();
+        sc.nextLine(); // Consume newline
+
+        // Add student names
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter student name " + (i + 1) + ": ");
+            String name = sc.nextLine();
+            students.add(name);
+        }
+
+        // Display all students
+        System.out.println("\nStudent List:");
+        for (String student : students) {
+            System.out.println(student);
+        }
+
+        // Search for a student
+        System.out.print("\nEnter a student name to search: ");
+        String searchName = sc.nextLine();
+
+        if (students.contains(searchName)) {
+            System.out.println(searchName + " is present in the list.");
+        } else {
+            System.out.println(searchName + " is not found.");
+        }
+
+        // Remove a student
+        System.out.print("\nEnter a student name to remove: ");
+        String removeName = sc.nextLine();
+
+        if (students.remove(removeName)) {
+            System.out.println(removeName + " removed successfully.");
+        } else {
+            System.out.println(removeName + " not found.");
+        }
+
+        // Display updated list
+        System.out.println("\nUpdated Student List:");
+        for (String student : students) {
+            System.out.println(student);
+        }
+
+        sc.close();
+    }
+}
