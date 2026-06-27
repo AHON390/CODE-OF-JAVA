@@ -1,0 +1,37 @@
+// Importing necessary libraries for input/output and ArrayList handling
+import java.util.*;
+
+public class ReverseList {
+
+    // Main method where the execution starts
+    public static void main(String[] args) {
+
+    // Creating a Scanner object to read input from the user
+    Scanner scn = new Scanner(System.in);
+
+    // Prompting user to input the number of arrays (n)
+    System.out.print("Enter the number of arrays you want to input: ");
+    
+    int n = scn.nextInt();
+    
+    ArrayList<Integer> al=new ArrayList<>();
+    
+    System.out.print("enter the"+n+"inetegers");
+    for(int i=0;i<n;i++){
+        al.add(scn.nextInt());
+    }
+    ArrayList<Integer> ans=reverse(al);
+    
+    System.out.print("REVERSE list"+ans);
+    
+    }
+    static ArrayList<Integer> reverse(ArrayList<Integer> list)
+    {
+        ArrayList<Integer> ans = new ArrayList<>();
+        for(int i=list.size()-1;i>=0;i--){
+            ans.add(list.get(i));
+        }
+        return ans;
+        
+    }
+}
