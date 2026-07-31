@@ -1,0 +1,40 @@
+class Board {
+    private int[][] board;
+    private int size;
+
+    public Board(int size) {
+        this.size = size;
+        board = new int[size][size];
+    }
+
+    public int[][] getBoard() {
+        return board;
+    }
+
+    public int getSize() {
+        return size;
+    }
+}
+
+class Knight {
+
+    private final int[] rowMove = {-2,-1,1,2,2,1,-1,-2};
+    private final int[] colMove = {1,2,2,1,-1,-2,-2,-1};
+
+    public boolean solve(Board board, int row, int col, int move) {
+        // Recursive backtracking algorithm
+        return false;
+    }
+}
+
+public class KnightTour {
+
+    public static void main(String[] args) {
+
+        Board board = new Board(8);
+        Knight knight = new Knight();
+
+        knight.solve(board,0,0,1);
+
+    }
+}
